@@ -17,9 +17,11 @@ variable "x_list" {
 # variable with map
 
 variable "z_map" {
-  x = "prakhar"
-  y = "jyoti"
-  z = "AWS"
+  default = {
+    x = "prakhar"
+    y = "jyoti"
+    z = "AWS"
+  }
 }
 
 # print variable
