@@ -6,7 +6,7 @@ variable "x" {
 
 # Declare the variable without value
 
-variable "y" {}
+# variable "y" {} --> Interactive approach we generally don't follow
 
 # variable of list
 
@@ -18,7 +18,7 @@ variable "x_list" {
 
 variable "z_map" {
   default = {
-    x = "prakhar"
+    x = { a= [111,112,113] }
     y = "jyoti"
     z = "AWS"
   }
@@ -30,9 +30,9 @@ output "x" {
   value = var.x
 }
 
-output "y" {
-  value = var.y
-}
+#output "y" {
+#  value = var.y
+#}
 
 output "x_list" {
   value = var.x_list
@@ -48,6 +48,6 @@ output "z_map" {
 
 
 output "z_map_index" {
-  value = var.z_map["y"]
+  value = var.z_map["x"]
 }
 
