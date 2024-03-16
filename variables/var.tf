@@ -52,6 +52,6 @@ output "z_map_index" {
 }
 
 output "substitution" {
-  value = var.z_map["x.a.[0]"]
+  value = var.z_map["x"]["a"][0]
 
 }
