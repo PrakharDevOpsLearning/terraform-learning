@@ -48,6 +48,6 @@ output "z_map" {
 
 
 output "z_map_index" {
-  value = var.z_map[y]
+  value = var.z_map["y"]
 }
 
