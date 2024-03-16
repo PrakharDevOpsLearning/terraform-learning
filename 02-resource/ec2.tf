@@ -1,4 +1,4 @@
-resource "aws_instance" "frontend" {
+resource "aws_instance" "backend" {
   ami           = "ami-05f020f5935e52dc4"
   instance_type = "t3.micro"
   tags = {
