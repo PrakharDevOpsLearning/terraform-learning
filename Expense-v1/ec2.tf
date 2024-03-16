@@ -2,7 +2,6 @@ resource "aws_instance" "frontend" {
   ami           = var.aws_ami
   instance_type = var.ins_type
   vpc_security_group_ids = var.sec_grp
-  state = "running"
   tags = {
     Name = "frontend"
   }
