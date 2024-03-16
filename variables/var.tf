@@ -24,7 +24,7 @@ variable "z_map" {
   }
 }
 
-# print variable
+# print variables
 
 output "x" {
   value = var.x
@@ -55,3 +55,5 @@ output "substitution" {
   value = var.z_map["x"]["a"][0]
 
 }
+
+
