@@ -4,6 +4,6 @@ resource "aws_instance" "frontend" {
   tags = {
     name = "frontend"
   }
-  security_groups = ["allow-all"]
-
+  vpc_security_group_ids = ["sg-09ef698c04eeb1d92"]
 }
+
