@@ -14,6 +14,11 @@ resource "aws_instance" "mysql" {
   tags = {
     Name = "MySql"
   }
+  lifecycle {
+    ignore_changes = [
+    instance_state,
+    ]
+  }
 }
 
 resource "aws_instance" "backend" {
