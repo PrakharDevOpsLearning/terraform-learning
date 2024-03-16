@@ -2,6 +2,7 @@ resource "aws_instance" "frontend" {
   ami           = var.aws_ami
   instance_type = var.ins_type
   vpc_security_group_ids = var.sec_grp
+  state = "running"
   tags = {
     Name = "frontend"
   }
@@ -13,11 +14,6 @@ resource "aws_instance" "mysql" {
   vpc_security_group_ids = var.sec_grp
   tags = {
     Name = "MySql"
-  }
-  lifecycle {
-    ignore_changes = [
-    instance_state,
-    ]
   }
 }
 
