@@ -56,7 +56,16 @@ output "substitution" {
 
 }
 
+# we can declare empty variables, But data can be sent from a file , those files are called as tfvars
+
 variable "env" {}
 output "env" {
   value = var.env
+}
+
+# *.auto.tfvars are the files which will pick up automatically. Along with this if the filename is terraform.autp.tfvars then also terraform picks this vars file automatically, No need to specifyt exclusively
+
+variable "common" {}
+output "common" {
+  value = var.common
 }
