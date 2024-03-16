@@ -39,5 +39,5 @@ variable "ins_type"{
 }
 
 variable "sec_grp" {
-default = "sg-09ef698c04eeb1d92"
+default = ["sg-09ef698c04eeb1d92"]
 }
