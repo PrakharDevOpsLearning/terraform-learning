@@ -6,4 +6,3 @@ resource "aws_instance" "backend" {
   }
   vpc_security_group_ids = ["sg-09ef698c04eeb1d92"]
 }
-
