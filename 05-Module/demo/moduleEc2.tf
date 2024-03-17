@@ -6,10 +6,10 @@ resource "aws_instance" "demo1" {
     Name = var.Name
   }
   #security_groups = [var.secGrp]
-
+   security_groups = var.secGrp
 }
 
 
 variable "Name" {}
 variable "Instance" {}
-#variable "secGrp" {}
+variable "secGrp" {}
