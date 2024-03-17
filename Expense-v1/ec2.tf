@@ -39,7 +39,7 @@ variable "ins_type"{
 #}
 
 variable "sec_grp" {
-  default = data.aws_security_group.selected.id
+  default = [data.aws_security_group.selected.id]
 
 }
 data "aws_security_group" "selected" {
