@@ -33,6 +33,14 @@ variable "ins_type"{
   default = "t3.micro"
 }
 
+#variable "sec_grp" {
+#default = ["sg-09ef698c04eeb1d92"]
+#}
+
 variable "sec_grp" {
-default = ["sg-09ef698c04eeb1d92"]
+  default = data.aws_security_group.selected.id
+
+}
+data "aws_security_group" "selected" {
+  name = "allow-all"
 }

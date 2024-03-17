@@ -58,6 +58,8 @@ output "substitution" {
 
 # we can declare empty variables, But data can be sent from a file , those files are called as tfvars
 
+#command to run tfvars file - terraform apply -var-file filename(prod.tfvars)
+
 variable "env" {}
 output "env" {
   value = var.env
