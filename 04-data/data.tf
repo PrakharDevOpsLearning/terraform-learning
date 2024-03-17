@@ -10,13 +10,17 @@ data "aws_security_group" "selected" {
   name = "allow-all"
 }
 
-variable "Sec_GrpID" {
-  default = data.aws_security_group.selected.id
+#variable "Sec_GrpID" {
+#  default = data.aws_security_group.selected.id
+#}
+
+
+output "Sec_Info" {
+  value = data.aws_security_group.selected.id
 }
+
+
+
 #output "Sec_Info" {
 #  value = data.aws_security_group.selected
 #}
-
-output "Sec_Info" {
-  value = var.Sec_GrpID
-}
