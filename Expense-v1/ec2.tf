@@ -10,7 +10,8 @@ resource "aws_instance" "frontend" {
 resource "aws_instance" "mysql" {
   ami           = var.aws_ami
   instance_type = var.ins_type
-  vpc_security_group_ids = var.sec_grp
+  #vpc_security_group_ids = var.sec_grp
+  vpc_security_group_ids = data.aws_security_group.selected.id
   tags = {
     Name = "MySql"
   }
