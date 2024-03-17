@@ -1,7 +1,7 @@
 resource "aws_instance" "frontend" {
   ami           = var.aws_ami
   instance_type = var.ins_type
-  vpc_security_group_ids = var.sec_grp
+  vpc_security_group_ids = [var.sec_grp]
   tags = {
     Name = "frontend"
   }
@@ -10,7 +10,7 @@ resource "aws_instance" "frontend" {
 resource "aws_instance" "mysql" {
   ami           = var.aws_ami
   instance_type = var.ins_type
-  vpc_security_group_ids = var.sec_grp
+  vpc_security_group_ids = [var.sec_grp]
   #vpc_security_group_ids = data.aws_security_group.selected.id
   tags = {
     Name = "MySql"
@@ -20,7 +20,7 @@ resource "aws_instance" "mysql" {
 resource "aws_instance" "backend" {
   ami           = var.aws_ami
   instance_type = var.ins_type
-  vpc_security_group_ids = var.sec_grp
+  vpc_security_group_ids = [var.sec_grp]
   tags = {
     Name = "backend"
   }
@@ -43,5 +43,4 @@ data "aws_security_group" "selected" {
 
 variable "sec_grp" {
   default = data.aws_security_group.selected.id
-
 }
