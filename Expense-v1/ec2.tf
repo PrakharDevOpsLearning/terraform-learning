@@ -37,11 +37,11 @@ variable "ins_type"{
 #variable "sec_grp" {
 #default = ["sg-09ef698c04eeb1d92"]
 #}
-
-variable "sec_grp" {
-  default = [data.aws_security_group.selected.id]
-
-}
 data "aws_security_group" "selected" {
   name = "allow-all"
+}
+
+variable "sec_grp" {
+  default = data.aws_security_group.selected.id
+
 }
