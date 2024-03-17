@@ -6,7 +6,7 @@ resource "aws_instance" "demo1" {
     Name = var.Name
   }
   #security_groups = [var.secGrp]
-   security_groups = var.secGrp
+   security_groups = "var.secGrp"
 }
 
 
