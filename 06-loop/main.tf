@@ -8,6 +8,4 @@ variable "instances" {
 
 resource "null_resource" "example" {
   for_each = var.instances
-
-  instance_type = each.value
 }
