@@ -31,5 +31,5 @@ variable "ami" {
 }
 
 data "aws_security_group" "selected" {
-  Name='allow-all'
+  Name="allow-all"
 }
