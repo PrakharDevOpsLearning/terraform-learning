@@ -1,11 +1,35 @@
 variable "instances" {
   default = {
-    "instance1" = "t2.micro"
-    "instance2" = "t2.nano"
-    "instance3" = "t2.small"
+
+    frontend= {
+      instance_type="t2.micro"
+    }
+
+    backend= {
+      instance_type="t3.micro"
+    }
+
+    mysql= {
+      instance_type="t3.small"
+    }
+
   }
 }
 
-resource "null_resource" "example" {
-  for_each = var.instances
+
+resource "aws_instance" "resource" {
+  for_each      = var.instances
+  instance_type = each.value["instance_type"]
+  ami = var.ami
+  vpc_security_group_ids = [data.aws_security_group.selected.id]
+  tags = {
+    Name=each.key
+  }
+}
+
+variable "ami" {
+}
+
+data "aws_security_group" "selected" {
+  Name='allow-all'
 }
