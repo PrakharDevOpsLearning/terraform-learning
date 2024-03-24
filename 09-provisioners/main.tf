@@ -17,8 +17,8 @@ resource "aws_instance" "provisioner" {
     }
 
     inline = [
-      "sudo dnf install nginx",
-      "sudo systemctl restart nginx"
+      "sudo dnf install nginx -y",
+      "sudo systemctl start nginx"
     ]
   }
 }
