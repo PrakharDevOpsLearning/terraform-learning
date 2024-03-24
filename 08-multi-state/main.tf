@@ -7,3 +7,5 @@ output "env" {
 
 
 variable "env" {}
+
+resource "null_resource" "example" {}
